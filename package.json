@@ -19,7 +19,6 @@
     "react-native": "0.66.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-ionicons": "^4.6.5",
-    "react-native-reanimated": "^2.2.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-vector-icons": "^8.1.0"
@@ -53,14 +52,8 @@
       "json",
       "node"
     ],
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
-    ],
-    "setupFiles": [
-      "<rootDir>/jest/setup.js"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"
-    ]
+    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
+    "setupFiles": ["./node_modules/react-native-gesture-handler/jestSetup.js"],
+    "transformIgnorePatterns": ["node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)"]
   }
 }
