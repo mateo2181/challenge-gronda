@@ -13,20 +13,14 @@ export default function Creations({navigation}: Props) {
   const [creationsData, setCreations] = useState<Array<Creation>>([]);
 
   useEffect(() => {
-    // let mounted = true;
-    // if (mounted) {
     api.creations.getAll().then(creations => {
       setCreations(creations);
     });
-    // }
-    // return () => {
-    //   mounted = false;
-    // };
   }, []);
 
-  // if (!creationsData.length) {
-  //   return <Text>Loading...</Text>;
-  // }
+  if (creationsData.length === 0) {
+    return <Text>Creations not found</Text>;
+  }
 
   return (
     <ScrollView style={styles.container}>
